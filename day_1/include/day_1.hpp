@@ -3,8 +3,7 @@
 #include <vector>
 
 namespace part_1 {
-uint32_t calculate_calibration_values(std::vector<std::string> &file_contents);
-char get_left_most_number_char(std::string &line);
-char get_right_most_number_char(std::string &line);
-uint32_t convert_char_nums_to_number(char &val_1, char &val_2);
+uint32_t
+calculate_calibration_values(std::vector<std::string> const &file_contents);
+std::vector<uint8_t> get_numbers_found_in_string(std::string const &line);
 } // namespace part_1
