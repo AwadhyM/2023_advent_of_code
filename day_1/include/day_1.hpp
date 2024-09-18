@@ -14,6 +14,4 @@ extern std::array<std::string, 10> words;
 
 uint32_t
 calculate_calibration_values(std::vector<std::string> const &file_contents);
-bool is_substring_of_word(const std::string &str);
-bool is_number(const std::string &word);
 } // namespace part_2
