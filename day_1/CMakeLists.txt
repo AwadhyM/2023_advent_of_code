@@ -6,3 +6,8 @@ target_include_directories(day-1
 	PUBLIC
 		include
 )
+
+target_link_libraries(day-1
+	PUBLIC
+		utilities
+)

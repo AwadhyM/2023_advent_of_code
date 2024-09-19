@@ -1,7 +1,7 @@
 #include "utils.hpp"
 #include <fstream>
-
-std::vector<std::string> retrieve_file_contents(std::string const &file_path) {
+std::vector<std::string>
+utils::retrieve_file_contents(std::string const &file_path) {
   std::ifstream input_file(file_path);
   std::string line;
 

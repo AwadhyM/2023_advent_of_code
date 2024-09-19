@@ -1,15 +1,11 @@
 #include "day_1.hpp"
+#include "utils.hpp"
 
 int main(int argc, char *argv[]) {
   // TODO - implement input argument checking
-  std::ifstream input_file(argv[1]);
-
-  std::vector<std::string> contents_of_file;
-  std::string line;
-  while (getline(input_file, line)) {
-    contents_of_file.push_back(line);
-  }
-
+  std::string file_path(argv[1]);
+  std::vector<std::string> contents_of_file =
+      utils::retrieve_file_contents(file_path);
   uint32_t calibration_value =
       part_1::calculate_calibration_values(contents_of_file);
   std::cout << calibration_value << std::endl;
