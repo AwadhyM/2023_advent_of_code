@@ -11,3 +11,4 @@ target_include_directories(utilities
 		utils/include)
 
 add_subdirectory(day_1)
+add_subdirectory(day_2)
