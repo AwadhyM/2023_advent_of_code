@@ -3,6 +3,9 @@
 #include <vector>
 
 namespace puzzle {
+std::string extract_color(const std::string &dice_roll);
+int extract_number(const std::string &dice_roll);
+std::pair<int, std::string> extract_dice_roll(const std::string &dice_roll);
 
 namespace part_1 {
 
@@ -12,10 +15,12 @@ constexpr int blue_max = 14;
 
 uint32_t
 calculate_score_of_possible_games(std::vector<std::string> &file_contents);
-std::pair<int, std::string> extract_dice_roll(const std::string &dice_roll);
 bool round_valid(std::unordered_map<std::string, int> &mp);
-std::string extract_color(const std::string &dice_roll);
-int extract_number(const std::string &dice_roll);
 } // namespace part_1
+
+namespace part_2 {
+uint32_t
+calculate_total_power_of_sets_of_cubes(std::vector<std::string> &file_contents);
+}
 
 } // namespace puzzle
