@@ -1,4 +1,5 @@
 #include "day_2.hpp"
+#include <functional>
 #include <numeric>
 #include <regex>
 #include <sstream>
@@ -96,16 +97,13 @@ uint32_t part_2::calculate_total_power_of_sets_of_cubes(
       for (std::sregex_iterator i = begin; i != std::sregex_iterator(); i++) {
         std::smatch m = *i;
         std::pair<int, std::string> dice_roll = extract_dice_roll(m.str());
-        if (mp[dice_roll.second] < dice_roll.first) {
-          mp[dice_roll.second] = dice_roll.first;
-        }
+        mp[dice_roll.second] = std::max(dice_roll.first, mp[dice_roll.second]);
       }
     }
-    int product = 1;
-    for (auto const &[key, val] : mp) {
-      product *= val;
-    }
-    sum += product;
+    sum += std::accumulate(mp.begin(), mp.end(), 1,
+                           [&](int acc, const std::pair<std::string, int> &p) {
+                             return acc * p.second;
+                           });
   }
   return sum;
 }
